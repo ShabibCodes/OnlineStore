@@ -9,14 +9,23 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class ConfirmationComponent {
 
-order!: Order;
+order: Order;
 
-  constructor(private cartService: CartService){}
+  constructor(private cartService: CartService){
+    this.order= {
+      name:"",
+      address:"",
+      cardNumber:0,
+      total:0
+    }
+  }
 
 ngOnInit(){
   this.order= this.cartService.getOrder();
 
 }
+
+
 
 
 }

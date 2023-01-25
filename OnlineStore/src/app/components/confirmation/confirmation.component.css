@@ -2,7 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 8%;
+  flex-direction: row;
+  margin: 10% auto;
 }
 
 .confirmation-items {
@@ -12,9 +13,11 @@
 }
 
 .confirmation-header {
-  color: #33e5bc
+  color: #33e5bc;
+  font-size: 5vw;
 }
 
 .confirmation-item {
   margin-bottom: 30px;
 }
+

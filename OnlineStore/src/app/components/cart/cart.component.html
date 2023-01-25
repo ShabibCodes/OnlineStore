@@ -57,7 +57,7 @@
       </div>
       <button
         style="text-align: center"
-        [disabled]="itemForm.invalid"
+        [disabled]="itemForm.invalid || total <= 0"
         type="submit"
         class="btn btn-info"
         routerLink="/confirmation"

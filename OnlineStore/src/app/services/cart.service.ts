@@ -9,9 +9,16 @@ export class CartService {
 
   cart: Item[]= []
   total: number=0;
-  order!: Order
+  order: Order
 
-  constructor() { }
+  constructor() { 
+    this.order= {
+      name:"",
+      address:"",
+      cardNumber:0,
+      total:0
+    }
+  }
 
 
 addToCart(item: Item): void{

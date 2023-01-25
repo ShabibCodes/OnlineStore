@@ -12,10 +12,12 @@ export class CartComponent {
 
 
 cart: Item[]=[]
-total!: Number
+total: Number
 
 order: Order
 constructor(private cartService: CartService){
+
+  this.total= 0
   this.order={
     name:"",
     address:"",

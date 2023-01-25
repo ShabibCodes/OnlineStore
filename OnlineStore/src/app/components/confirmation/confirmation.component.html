@@ -1,10 +1,15 @@
-<p>XX{{ order.name }}</p>
-
-<div style="width: fit-content" class="main">
+<div style="width: fit-content" class="confirmation-container">
   <article class="card m-5 product-container">
     <div class="card-body">
       <div class="product-details">
-        <div></div>
+        <div>
+          <p class="confirmation-header">Success</p>
+        </div>
+        <div>
+          Thank you {{ order.name }} for dealing with us.
+          <p>Please expect your order in 2-3 business days</p>
+          You total is ${{ order.total }}
+        </div>
         <p>
           <a routerLink="/products"> Go back to products</a>
         </p>
