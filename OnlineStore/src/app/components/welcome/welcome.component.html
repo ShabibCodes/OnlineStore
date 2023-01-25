@@ -1,0 +1,90 @@
+<!-- NOT DONE -->
+
+<body>
+  <div class="text-box">
+    <h1>Welcome to The Online Store</h1>
+    <p>Get you item that you desires</p>
+    <span class="btn-span">
+      <a class="hero-btn signIn-btn home-btn">SIGN UP</a>
+      <details>
+        <summary>Sign-up</summary>
+        <div class="card-body">
+          <h5 class="card-title">Sign-up</h5>
+          <div>
+            <form action="/home" method="post">
+              <fieldset>
+                <input name="opType" id="opType" value="signup" type="hidden" />
+
+                <p>
+                  <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="username"
+                    required
+                  />
+                </p>
+                <p>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="email"
+                    required
+                  />
+                </p>
+                <p>
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="password"
+                    required
+                  />
+                </p>
+                <button type="submit" class="btn btn-info">submit</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </details>
+
+      <button class="hero-btn signUp-btn home-btn">CUSTOMER</button>
+      <details>
+        <summary>SIGN-IN</summary>
+        <form action="/home" method="post">
+          <fieldset>
+            <input name="opType" id="opType" value="signin" type="hidden" />
+
+            <p>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                placeholder="username"
+                required
+              />
+            </p>
+            <p>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="password"
+                required
+              />
+            </p>
+            <button type="submit" class="btn btn-info">submit</button>
+          </fieldset>
+        </form>
+      </details>
+      <form action="/home" method="post">
+        <input name="username" id="username" value="admin" type="hidden" />
+
+        <button class="hero-btn signUp-btn home-btn px-lg-5" type="submit">
+          ADMIN
+        </button>
+      </form>
+    </span>
+  </div>
+</body>

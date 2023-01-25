@@ -2,22 +2,28 @@
   max-height: 70;
   display: flex;
   justify-content: space-between;
-  background: rgb(96, 252, 249);
+  background: rgba(96, 220, 217, 0.74);
   padding: 20px ;
+  /* background-image: url("/assets/welcome-background.svg"); */
+
 }
 
 .space{
-margin: 0 20px;
+margin: 0 30px;
 }
 
 .logo{
-  font-size: 30px;
+  font-size: 40px;
   color:rgb(70, 69, 73);
   text-decoration: none;
+  font-weight: 900;
+
 }
 
 a{
-  font-size: 20px;
-  color:rgb(70, 69, 73);
+  font-size: 25px;
+  font-weight: 700;
+  /* color:rgb(70, 69, 73); */
+  color: whitesmoke;
   text-decoration: none;
 }
