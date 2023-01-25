@@ -20,7 +20,7 @@ export class ProductItemComponent {
       id:0,
       price:0,
       name: "",
-      desc: "",
+      description: "",
       url: ""
     }
 

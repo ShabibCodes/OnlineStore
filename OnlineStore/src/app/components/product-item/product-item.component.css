@@ -1,5 +1,6 @@
 .product-image {      
   list-style-type: none;
+  border-radius: 7%;
   width: 300px;
   padding: 0px;
   margin: 5px auto;        

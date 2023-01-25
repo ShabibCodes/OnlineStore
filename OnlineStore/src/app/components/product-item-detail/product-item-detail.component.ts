@@ -21,7 +21,7 @@ constructor(private cartService: CartService ,private router: ActivatedRoute, pr
   this.product={
     id: 0,
     name: "",
-    desc:  "",
+    description:  "",
     url: "",  
     price: 1
 }
