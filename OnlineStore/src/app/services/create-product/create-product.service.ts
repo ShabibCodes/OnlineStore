@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Product } from '../models/product';
+import { Product } from '../../models/product';
 import { HttpClient } from '@angular/common/http'; //service so include it in the constructor
-import client from '../database';
-import dataJSON from '../../assets/data.json' // CHECK !
+import client from '../../database';
+import dataJSON from '../../../assets/data.json' // CHECK !
 
 
 @Injectable({

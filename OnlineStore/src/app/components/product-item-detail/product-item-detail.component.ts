@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import {ActivatedRoute} from '@angular/router'
-import {CreateProductService} from '../../services/create-product.service'
+import {CreateProductService} from '../../services/create-product/create-product.service'
 import { Item } from 'src/app/models/item';
 import { CartService } from 'src/app/services/cart/cart.service';
 @Component({
