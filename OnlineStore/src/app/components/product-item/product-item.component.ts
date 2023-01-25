@@ -2,7 +2,6 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { Item } from 'src/app/models/item';
 import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart/cart.service';
-
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
@@ -39,7 +38,7 @@ export class ProductItemComponent {
     }
     this.cartService.addToCart(this.item)
     // console.log('X',this.item)
-    alert("Product has been added to the cart.")
+    alert(`${this.product.name} ($${this.product.price})has been added to the cart.`)
   }
 }
 

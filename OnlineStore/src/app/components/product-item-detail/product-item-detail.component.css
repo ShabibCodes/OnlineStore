@@ -2,7 +2,8 @@
   list-style-type: none;
   width: 300px;
   padding: 0px;
-  margin: 5px auto;        
+  margin: 5px auto;  
+  border-radius: 7%;      
 } 
 
 .product-container {

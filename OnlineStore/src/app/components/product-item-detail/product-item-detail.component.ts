@@ -56,7 +56,7 @@ submitToCart(): void{
   }
   this.cartService.addToCart(this.item)
   // console.log('X',this.item)
-  alert("Product has been added to the cart.")
+  alert(`${this.product.name} ($${this.product.price})has been added to the cart.`)
 }
 }
 
