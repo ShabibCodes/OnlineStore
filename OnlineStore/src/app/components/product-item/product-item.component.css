@@ -23,7 +23,19 @@
 
 
 .product-details{
+  font-size: 1.4vw;
+  font-weight: 700;
+  font-style: italic;
 }
+
+
+.home-user{
+  background-size: cover;
+  background-repeat: repeat;
+      background: 
+      linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)),url("https://images.unsplash.com/photo-1516541196182-6bdb0516ed27?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+}
+
 
 button{
   width: 20rem;

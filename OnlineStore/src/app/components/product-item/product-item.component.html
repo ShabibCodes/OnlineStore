@@ -1,11 +1,11 @@
-<div style="width: fit-content">
-  <article class="card m-5 product-container">
+<div style="width: fit-content" class="">
+  <article class="card m-5 product-container home-user">
     <div>
       <a routerLink="/products/{{ product.id }}">
         <img src="{{ product.url }}" alt="" class="product-image" />
       </a>
     </div>
-    <div class="card-body">
+    <div class="card-body home-user">
       <h3 class="report-title" style="text-align: center">
         <strong>{{ product.name }}</strong>
       </h3>
@@ -15,9 +15,9 @@
         <form #itemForm="ngForm" (ngSubmit)="submitToCart()">
           <div>
             <ul>
-              <li>name: {{ product.name }}</li>
-              <li>desc: {{ product.description }}</li>
-              <li>price: ${{ product.price }}</li>
+              <li>Name: {{ product.name }}</li>
+              <li>Desc: {{ product.description }}</li>
+              <li>Price: ${{ product.price }}</li>
 
               <select
                 name="select"

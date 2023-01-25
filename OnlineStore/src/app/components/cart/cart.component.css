@@ -61,6 +61,10 @@
         border-left: 2px  solid #7c7b7b;
         margin: 1rem 2rem;
       }
+
+      .Error-msg{
+        color: red;
+      }
       
       button{
         width: 20rem;
