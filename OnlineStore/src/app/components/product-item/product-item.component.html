@@ -1,7 +1,7 @@
 <div style="width: fit-content">
   <article class="card m-5 product-container">
     <div>
-      <a routerLink="/product/{{ product.id }}">
+      <a routerLink="/products/{{ product.id }}">
         <img src="{{ product.url }}" alt="" class="product-image" />
       </a>
     </div>
@@ -21,17 +21,21 @@
 
               <select
                 name="select"
+                required
                 class="select-input"
                 [(ngModel)]="item.quantity"
               >
-                <option *ngFor="let n of counter">{{ n }}</option>
+                <option disabled value="1">Select a Quantity</option>
+                <option *ngFor="let n of counter" [ngValue]="n">
+                  {{ n }}
+                </option>
               </select>
             </ul>
             <button
               style="text-align: center"
-              [disabled]="itemForm.invalid"
               type="submit"
               class="btn btn-info"
+              [disabled]="itemForm.invalid && itemForm.dirty"
             >
               Add to cart
             </button>

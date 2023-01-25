@@ -28,7 +28,7 @@ constructor(private cartService: CartService ,private router: ActivatedRoute, pr
 
 this.item= {
   product: this.product,
-  quantity: 0
+  quantity: 1
 }
 }
 
@@ -49,12 +49,15 @@ ngOnInit(){
 
 submitToCart(): void{
 
+  if(this.item.quantity !== 0){
   this.item= {
     product: this.product,
     quantity: this.item.quantity
   }
   this.cartService.addToCart(this.item)
+  // console.log('X',this.item)
   alert("Product has been added to the cart.")
+}
 }
 
 }

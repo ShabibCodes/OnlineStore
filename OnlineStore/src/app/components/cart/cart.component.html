@@ -1,18 +1,70 @@
-<div class="">
-  <div class="card m-5" style="width: 50rem">
-    <div class="">
-      <div class="cart-container report-body">
-        <div *ngFor="let item of cart" class="cart-item">
-          <img src="{{ item.product.url }}" alt="" class="product-image" />
-        </div>
-        <div>
-          <form class="form-margin">
-            <p>Full Name<input type="text" name="" id="" /></p>
-            <p>Address<input type="text" name="" id="" /></p>
-            <p>Credit Card<input type="text" name="" id="" /></p>
-          </form>
-        </div>
+<div style="width: 50rem" class="main card">
+  <div *ngIf="cart.length == 0" class="cart-images">
+    <h3 class="Error-msg">No Item is added</h3>
+  </div>
+  <div class="cart-images">
+    <div *ngFor="let item of cart" class="images-details">
+      <img src="{{ item.product.url }}" alt="" class="product-image" />
+      <div>
+        <ul>
+          <li>Name: {{ item.product.name }}</li>
+          <li>price: ${{ item.product.price }}</li>
+          <li>Quantity: {{ item.quantity }}</li>
+        </ul>
       </div>
     </div>
+  </div>
+  <div class="verticalLine"></div>
+  <div class="purchase-form card-body">
+    <p>
+      <label for="">Total: ${{ total }}</label>
+    </p>
+    <form #itemForm="ngForm" (ngSubmit)="submitPayment()">
+      <div>
+        <p>
+          Full Name<input
+            name="fullname"
+            type="text"
+            [(ngModel)]="order.name"
+            placeholder="Shabib Aldawsari"
+            minlength="5"
+            maxlength="20"
+            required
+          />
+        </p>
+        <p>
+          Address<input
+            name="address"
+            type="text"
+            [(ngModel)]="order.address"
+            placeholder="Dhahran, Saudi Arabia"
+            minlength="5"
+            maxlength="50"
+            required
+          />
+        </p>
+        <p>
+          Credit Card<input
+            name="card"
+            type="text"
+            [(ngModel)]="order.cardNumber"
+            placeholder="0000 0000 0000 0000"
+            minlength="3"
+            maxlength="16"
+            required
+          />
+        </p>
+      </div>
+      <button
+        style="text-align: center"
+        [disabled]="itemForm.invalid"
+        type="submit"
+        class="btn btn-info"
+        routerLink="/confirmation"
+        (click)="clearCart()"
+      >
+        Pay
+      </button>
+    </form>
   </div>
 </div>

@@ -17,6 +17,7 @@ export class ProductListComponent {
     // Subscribe to the observable
     this.createService.getProducts().subscribe(res=> {
       this.products= res
+      console.log(res)
     })
   }
 }

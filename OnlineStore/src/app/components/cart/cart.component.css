@@ -1,25 +1,26 @@
-img {
-    width: 100px;
-    border-radius: 10px;
-  }
-  
-  .form-margin {
-    margin-bottom: 12px;
-  }
-  
-  .cart-item {
+
+  .main{
     display: flex;
     flex-direction: row;
+    margin: 10% auto;
+  
+  }
+ 
+  
+  .cart-images {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     margin-bottom: 20px;
+    padding: 1rem;
+  }
+  .images-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
   }
   
-  .cart-item-details {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: left;
-    margin-left: 80px;
-  }
   
   .number-input {
     width: 80px;
@@ -28,18 +29,49 @@ img {
   
   .cart-container {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 64px;
-  }
-  
-  .cart-panel {
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-  
-  .empty-cart-message {
-    display: flex;
-    justify-content: center;
-    margin-top: 64px;
-  }
+    flex-direction: row;}
+
+    .product-image {      
+        padding: 0px;
+        margin: 5px 0;
+        margin-left: 3px;
+        width: 20%; 
+        border-radius: 10px;
+        height: auto;        
+      } 
+      
+      .product-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 64px;
+      
+      }
+      
+      .purchase-form{
+        display: flex;
+        flex-direction: column;
+    
+        align-items: flex-start;
+      }
+      
+      .verticalLine {
+        border-left: 2px  solid #7c7b7b;
+        margin: 1rem 2rem;
+      }
+      
+      button{
+        width: 20rem;
+        margin-bottom: 8px;
+      
+      }
+
+      input{
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+      }
