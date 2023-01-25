@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import {Item} from '../../models/item'
-import { CartService } from 'src/app/services/cart.service';
+import { CartService } from 'src/app/services/cart/cart.service';
 import { Order } from 'src/app/models/order';
-import { isTemplateExpression, textChangeRangeIsUnchanged } from 'typescript';
+import { FormBuilder } from '@angular/forms';
+
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -11,34 +13,18 @@ import { isTemplateExpression, textChangeRangeIsUnchanged } from 'typescript';
 export class CartComponent {
 
 
-cart: Item[]=[]
-total: Number
+cart: Item[]= this.cartService.getCart()
+total: Number= this.cartService.getTotal();
+  order: Order = new Order;
 
-order: Order
+
+
 constructor(private cartService: CartService){
 
-  this.total= 0
-  this.order={
-    name:"",
-    address:"",
-    cardNumber:0,
-    total: this.total
-  }
 }
 
 
-ngOnInit(){
-  this.cart= this.cartService.getCart();
-  console.log(this.cart.length,this.cart[0].product.name)
-  this.total= this.cartService.getTotal();
-}
-
-
-
-
-
-submitPayment(){
-
+submitPayment(): void{
   // set order model
   this.order= {
     name: this.order.name,
@@ -47,13 +33,19 @@ submitPayment(){
     total: this.total
   }
 
+  // console.log('x',this.order);
+
+
   /**
    * submit order to a service in order to
    * move data from one component to another
    * cart --> confirmation
    *  */ 
   this.cartService.setOrder(this.order);
+  this.clearCart()
 }
+
+
 
 clearCart(): void{
   this.cartService.clearCart();

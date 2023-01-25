@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Order } from 'src/app/models/order';
-import { CartService } from 'src/app/services/cart.service';
+import { CartService } from 'src/app/services/cart/cart.service';
 
 @Component({
   selector: 'app-confirmation',
@@ -22,6 +22,7 @@ order: Order;
 
 ngOnInit(){
   this.order= this.cartService.getOrder();
+  console.log('cinfrim',this.order);
 
 }
 

@@ -19,11 +19,11 @@
     <p>
       <label for="">Total: ${{ total }}</label>
     </p>
-    <form #itemForm="ngForm" (ngSubmit)="submitPayment()">
+    <form #itemForm="ngForm">
       <div>
         <p>
           Full Name<input
-            name="fullname"
+            name="name"
             type="text"
             [(ngModel)]="order.name"
             placeholder="Shabib Aldawsari"
@@ -57,11 +57,11 @@
       </div>
       <button
         style="text-align: center"
+        type="button"
         [disabled]="itemForm.invalid || total <= 0"
-        type="submit"
         class="btn btn-info"
         routerLink="/confirmation"
-        (click)="clearCart()"
+        (click)="submitPayment()"
       >
         Pay
       </button>

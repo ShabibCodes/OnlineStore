@@ -3,7 +3,7 @@ import { Product } from 'src/app/models/product';
 import {ActivatedRoute} from '@angular/router'
 import {CreateProductService} from '../../services/create-product.service'
 import { Item } from 'src/app/models/item';
-import { CartService } from 'src/app/services/cart.service';
+import { CartService } from 'src/app/services/cart/cart.service';
 @Component({
   selector: 'app-product-item-detail',
   templateUrl: './product-item-detail.component.html',
