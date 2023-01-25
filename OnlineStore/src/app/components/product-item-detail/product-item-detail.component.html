@@ -1,1 +1,30 @@
-<p>product-item-detail works!</p>
+<div class="container card m-5" style="width: 40rem">
+  <div class="">
+    <img src="{{ product.url }}" alt="" class="product-image" />
+    <h3 class="report-title">
+      <strong>{{ product.name }}</strong>
+    </h3>
+  </div>
+
+  <hr />
+  <div class="detail-container">
+    <form #itemForm="ngForm" (ngSubmit)="submitToCart()">
+      <ul>
+        <li>name: {{ product.name }}</li>
+        <li>desc: {{ product.desc }}</li>
+        <li>price: {{ product.price }}</li>
+        <li>
+          <select
+            required
+            name="select"
+            class="select-input"
+            [(ngModel)]="item.quantity"
+          >
+            <option *ngFor="let n of counter">{{ n }}</option>
+          </select>
+        </li>
+      </ul>
+      <button type="submit" class="btn btn-info">submit</button>
+    </form>
+  </div>
+</div>

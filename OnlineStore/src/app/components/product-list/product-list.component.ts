@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { Product } from 'src/app/models/product';
+import {CreateProductService} from '../../services/create-product.service'
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class ProductListComponent {
 
+  products: Product[]= []
+
+  
+  constructor(private createService:CreateProductService){}
+
+  ngOnInit(): void {
+    // Subscribe to the observable
+    this.createService.getProducts().subscribe(res=> {
+      this.products= res
+    })
+  }
 }

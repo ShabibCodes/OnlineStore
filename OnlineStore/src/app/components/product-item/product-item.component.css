@@ -1,9 +1,8 @@
 .product-image {      
   list-style-type: none;
-  width: 290px;
-  padding: 20px;
-  margin: 6px 6px;        
-  border: 1px solid #33B5E5;
+  width: 300px;
+  padding: 0px;
+  margin: 5px auto;        
 } 
 
 .product-container {
@@ -17,5 +16,16 @@
 
 .select-input {
   width: 108px; 
+  margin: 23px 0px 0px;
+
+}
+
+
+.product-details{
+}
+
+button{
+  width: 20rem;
   margin-bottom: 8px;
+
 }

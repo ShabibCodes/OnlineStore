@@ -1,1 +1,43 @@
-<p>product-item works!</p>
+<div style="width: fit-content">
+  <article class="card m-5 product-container">
+    <div>
+      <a routerLink="/product/{{ product.id }}">
+        <img src="{{ product.url }}" alt="" class="product-image" />
+      </a>
+    </div>
+    <div class="card-body">
+      <h3 class="report-title" style="text-align: center">
+        <strong>{{ product.name }}</strong>
+      </h3>
+      <hr />
+
+      <div class="product-details">
+        <form #itemForm="ngForm" (ngSubmit)="submitToCart()">
+          <div>
+            <ul>
+              <li>name: {{ product.name }}</li>
+              <li>desc: {{ product.desc }}</li>
+              <li>price: ${{ product.price }}</li>
+
+              <select
+                name="select"
+                class="select-input"
+                [(ngModel)]="item.quantity"
+              >
+                <option *ngFor="let n of counter">{{ n }}</option>
+              </select>
+            </ul>
+            <button
+              style="text-align: center"
+              [disabled]="itemForm.invalid"
+              type="submit"
+              class="btn btn-info"
+            >
+              Add to cart
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </article>
+</div>

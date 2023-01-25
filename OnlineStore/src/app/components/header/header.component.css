@@ -1,0 +1,23 @@
+.nav{
+  max-height: 70;
+  display: flex;
+  justify-content: space-between;
+  background: rgb(96, 252, 249);
+  padding: 20px ;
+}
+
+.space{
+margin: 0 20px;
+}
+
+.logo{
+  font-size: 30px;
+  color:rgb(70, 69, 73);
+  text-decoration: none;
+}
+
+a{
+  font-size: 20px;
+  color:rgb(70, 69, 73);
+  text-decoration: none;
+}

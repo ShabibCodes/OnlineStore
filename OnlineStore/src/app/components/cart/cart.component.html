@@ -1,1 +1,18 @@
-<p>cart works!</p>
+<div class="">
+  <div class="card m-5" style="width: 50rem">
+    <div class="">
+      <div class="cart-container report-body">
+        <div *ngFor="let item of cart" class="cart-item">
+          <img src="{{ item.product.url }}" alt="" class="product-image" />
+        </div>
+        <div>
+          <form class="form-margin">
+            <p>Full Name<input type="text" name="" id="" /></p>
+            <p>Address<input type="text" name="" id="" /></p>
+            <p>Credit Card<input type="text" name="" id="" /></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

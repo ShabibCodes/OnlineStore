@@ -1,6 +1,22 @@
+
+
+
 img {
   border-radius: 10px;
-  width: 320px;
+  width: 40%;
+  height: auto;
+  margin: 5px 6px 0 10px;        
+
+}
+
+
+
+.container{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  text-align: center;
 }
 
 .select-input {
@@ -12,7 +28,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 64px;
+  margin-top: 25%;
 }
 
 .detail-item {
@@ -23,3 +39,10 @@ img {
 .back-link {
   margin-top: 8px;
 }
+
+/* .product-image {      
+  list-style-type: none;
+  width: 100px;
+  padding: 0px;
+  margin: 5px 6px 0 10px;        
+}  */
