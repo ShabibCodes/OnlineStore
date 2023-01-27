@@ -12,6 +12,7 @@ export class ProductItemComponent {
   item: Item;
   counter: number[]= [1, 2,3, 4,5 ,6 ,7 ,8 ,9, 10]
   @Input() product: Product
+  @Output() cart!: Item
 
 
   constructor(private cartService: CartService){

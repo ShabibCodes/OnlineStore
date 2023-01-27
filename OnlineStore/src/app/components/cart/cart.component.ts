@@ -3,7 +3,7 @@ import {Item} from '../../models/item'
 import { CartService } from 'src/app/services/cart/cart.service';
 import { Order } from 'src/app/models/order';
 import { FormBuilder } from '@angular/forms';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -14,7 +14,8 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 export class CartComponent {
 
 
- trashIcon= faTrash; 
+trashIcon= faTrash; 
+cartIcon= faCartShopping
 counter: number[]= [1, 2,3, 4,5 ,6 ,7 ,8 ,9, 10]
 cart: Item[] = [];
 total: Number= this.cartService.getTotal();

@@ -48,16 +48,25 @@ ngOnInit(){
 }
 
 submitToCart(): void{
+  console.log('cart', this.cartService.getCart())
 
-  if(this.item.quantity !== 0){
   this.item= {
     product: this.product,
     quantity: this.item.quantity
   }
-  this.cartService.addToCart(this.item)
-  // console.log('X',this.item)
+  const itemInCart: Item= ( this.cartService.getCart()).filter(item => item.product.id == this.product.id)[0];
+
+  if(!itemInCart){ //Falsy (not in the cart)
+    this.cartService.addToCart(this.item)
+  }
   alert(`${this.product.name} ($${this.product.price})has been added to the cart.`)
+
 }
+
+
+updateQuantity(newQuantity: any):void{
+  this.item.quantity= Number(newQuantity)
+  
 }
 
 }
