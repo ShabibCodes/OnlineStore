@@ -10,6 +10,33 @@
           <li>Name: {{ item.product.name }}</li>
           <li>Price: ${{ item.product.price }}</li>
           <li>Quantity: {{ item.quantity }}</li>
+          <div class="select-container">
+            <select
+              [(ngModel)]="item.quantity"
+              (ngModelChange)="updateQuantity(item)"
+              name="select"
+              required
+              id="select-input"
+              [(ngModel)]="item.quantity"
+            >
+              <option disabled value="1">Select a Quantity</option>
+              <option *ngFor="let n of counter" [ngValue]="n">
+                {{ n }}
+              </option>
+            </select>
+            <form>
+              <button
+                class="btn btn-danger"
+                id="remove-btn"
+                routerLink="/cart"
+                (click)="removeFromcart(item)"
+              >
+                <span class="icon"
+                  ><fa-icon [icon]="trashIcon"> </fa-icon
+                ></span>
+              </button>
+            </form>
+          </div>
         </ul>
       </div>
     </div>
@@ -59,7 +86,7 @@
         style="text-align: center"
         type="button"
         [disabled]="itemForm.invalid || total <= 0"
-        class="btn btn-info"
+        class="pay-button btn btn-info"
         routerLink="/confirmation"
         (click)="submitPayment()"
       >

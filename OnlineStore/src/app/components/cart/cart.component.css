@@ -65,11 +65,26 @@
       .Error-msg{
         color: red;
       }
+     
       
-      button{
+      .pay-button{
         width: 20rem;
         margin-bottom: 8px;
       
+      }
+
+      .select-container{
+        display: flex;
+        align-items: center;
+      }
+
+      #select-input{
+        width: 20%;
+        margin-right: 20px;
+      }
+
+      #remove-btn{
+        height:min-content;
       }
 
       input{

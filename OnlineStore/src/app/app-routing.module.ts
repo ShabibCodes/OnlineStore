@@ -11,7 +11,8 @@ const routes: Routes = [
   {path: "products", component: ProductListComponent},
   {path: "cart", component: CartComponent},
   {path: "confirmation", component: ConfirmationComponent},
-  {path: "welcome", component: WelcomeComponent}
+  {path: "welcome", component: WelcomeComponent},
+  {path: "**", redirectTo: "products"} //navigate from incorrect route (wildcard)
 
 ];
 

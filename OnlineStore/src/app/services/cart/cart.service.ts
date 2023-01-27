@@ -25,8 +25,16 @@ addToCart(item: Item): void{
   this.cart.push(item);
 }
 
-getCart(): Item[]{
+removeFromCart(item: Item): void{
+  this.cart= this.cart.filter(i => i.product.id != item.product.id); //new cart
+}
+
+ getCart(): Item[]{
   return this.cart;
+}
+
+setCart(cart: Item[]): void{
+  this.cart= cart
 }
 
 clearCart(): void{
@@ -35,7 +43,7 @@ clearCart(): void{
 
 getTotal(): Number{
   let total= 0
-  this.cart.forEach((item) => total+= (item.product.price* item.quantity))
+  this.cart.forEach((item) => total+= (item.product.price* Number(item.quantity)))
   return total;
 }
 
@@ -50,5 +58,17 @@ setOrder(order: Order){
 
 getOrder(): Order{
   return this.order
+}
+
+updateCart(item: Item): void {
+  // console.log('XXZ',this.cart)
+  const oldQuantity=this.cart.filter(i =>i.product.id == item.product.id)[0];
+  // console.log('XX',oldQuantity)
+  this.cart= this.cart.filter(i => i.product.id != item.product.id); //new cart
+
+  // console.log('X', item.quantity, "ZZ", oldQuantity)
+  item.quantity= Number(item.quantity)+ Number(oldQuantity); //new total
+  this.cart.push(item);
+  console.log(item)
 }
 }

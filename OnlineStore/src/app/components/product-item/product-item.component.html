@@ -20,12 +20,13 @@
               <li>Price: ${{ product.price }}</li>
 
               <select
-                name="select"
+                #quantity
                 required
+                name="select"
                 class="select-input"
-                [(ngModel)]="item.quantity"
+                (change)="updateQuantity(quantity.value)"
               >
-                <option disabled value="1">Select a Quantity</option>
+                <option disabled>Select a Quantity</option>
                 <option *ngFor="let n of counter" [ngValue]="n">
                   {{ n }}
                 </option>
