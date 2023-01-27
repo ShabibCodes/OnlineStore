@@ -49,7 +49,11 @@
     <p>
       <label for="">Total: ${{ total }}</label>
     </p>
-    <form #itemForm="ngForm">
+    <form
+      #itemForm="ngForm"
+      [formGroup]="paymentForm"
+      (ngSubmit)="submitPayment()"
+    >
       <div>
         <p>
           Full Name<input
@@ -73,8 +77,9 @@
             required
           />
         </p>
-        <p>
+        <div>
           Credit Card<input
+            formControlName="cardNumber"
             name="card"
             type="text"
             [(ngModel)]="order.cardNumber"
@@ -83,15 +88,28 @@
             maxlength="16"
             required
           />
-        </p>
+          <div
+            *ngIf="form['cardNumber'].dirty && form['cardNumber'].invalid"
+            class="alert alert-danger"
+          >
+            <div *ngIf="form['cardNumber'].errors['required']">
+              Number is required.
+            </div>
+            <div *ngIf="form['cardNumber'].errors['pattern']">
+              Enter only number.
+            </div>
+            <div *ngIf="form['cardNumber'].errors['minlength']">
+              Enter only number (16 digits).
+            </div>
+          </div>
+        </div>
       </div>
       <button
         style="text-align: center"
-        type="button"
-        [disabled]="itemForm.invalid || total <= 0"
-        class="pay-button btn btn-info"
+        type="submit"
+        [disabled]="itemForm.invalid && total > 0"
+        class="pay-button btn btn-info my-3"
         routerLink="/confirmation"
-        (click)="submitPayment()"
       >
         Pay
       </button>

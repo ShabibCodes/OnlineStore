@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {Item} from '../../models/item'
 import { CartService } from 'src/app/services/cart/cart.service';
 import { Order } from 'src/app/models/order';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 import { faTrash, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -13,6 +13,7 @@ import { faTrash, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 })
 export class CartComponent {
 
+paymentForm: FormGroup = new FormGroup({});
 
 trashIcon= faTrash; 
 cartIcon= faCartShopping
@@ -23,11 +24,21 @@ order: Order = new Order;
 
 
 
-constructor(private cartService: CartService){}
+constructor(private cartService: CartService, private formBuilder: FormBuilder){
+this.paymentForm= formBuilder.group({
+  cardNumber: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(16)]]
+})
+
+}
 
 
  ngOnInit(){
   this.cart= this.cartService.getCart()
+}
+
+// To access form's control fields
+get form(){
+  return this.paymentForm.controls;
 }
 
 submitPayment(): void{
@@ -66,6 +77,9 @@ removeFromcart(item: Item): void{
   this.cartService.removeFromCart(item)
   this.cart= this.cartService.getCart()
   this.total= this.cartService.getTotal()
+
+  alert(`${item.product.name} has been removed to the cart.`)
+
 }
 
 }
