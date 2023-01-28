@@ -78,7 +78,7 @@ removeFromcart(item: Item): void{
   this.cart= this.cartService.getCart()
   this.total= this.cartService.getTotal()
 
-  alert(`${item.product.name} has been removed to the cart.`)
+  alert(`${item.product.name} has been removed from the cart.`)
 
 }
 
